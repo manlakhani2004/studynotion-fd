@@ -33,7 +33,7 @@ function MainBox({ onClose }) {
     };
 
     async function processMessageToChatGPT(chatMessages) {
-        const API_KEY = "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"; // replace with your actual key
+        const message = "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"; // replace with your actual key
 
         let apiMessages = chatMessages.map((messageObject) => {
             let role = messageObject.sender === "ChatGPT" ? "assistant" : "user";
@@ -53,7 +53,7 @@ function MainBox({ onClose }) {
         await fetch("https://openrouter.ai/api/v1/chat/completions", {
             method: "POST",
             headers: {
-                "Authorization": `Bearer ${API_KEY}`,
+                "Authorization": `Bearer ${message}`,
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(apiRequestBody)
