@@ -33,7 +33,7 @@ function MainBox({ onClose }) {
     };
 
     async function processMessageToChatGPT(chatMessages) {
-        const message = "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"; // replace with your actual key
+        const message = "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"; 
 
         let apiMessages = chatMessages.map((messageObject) => {
             let role = messageObject.sender === "ChatGPT" ? "assistant" : "user";
